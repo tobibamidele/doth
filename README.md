@@ -99,9 +99,6 @@ router.post('/auth/apple/callback',
   ));
 ```
 
-> ⚠️ **Production note**: The Apple provider's JWT signing currently uses HMAC-SHA256  
-> as a placeholder. Replace with a proper ES256 signer using `package:dart_jsonwebtoken`.
-
 ---
 
 ## Writing a Custom Provider
@@ -234,7 +231,7 @@ Doth.stateStore = RedisStateStore(myRedisClient);
 - [x] Cross-provider state confusion detection
 - [ ] Production: use a distributed state store (Redis/DB) in multi-instance deployments
 - [ ] Production: validate JWT signatures (Google/Apple ID tokens) with JWKS
-- [ ] Production: replace Apple ES256 placeholder with a real ECDSA signer
+- [x] Production: replace Apple ES256 placeholder with a real ECDSA signer
 
 ---
 
