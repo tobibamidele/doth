@@ -3,7 +3,7 @@ description: >
   A multi-provider OAuth2 authentication library for Dart backends.
   Inspired by markbates/goth for Go — write once, plug in any provider.
   Compatible with shelf, dart_frog, alfred, and raw dart:io servers.
-version: 1.0.0
+version: 1.0.1
 repository: https://github.com/tobibamidele/doth
 
 environment:
