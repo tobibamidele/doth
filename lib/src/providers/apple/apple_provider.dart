@@ -26,7 +26,6 @@ import 'dart:convert';
 
 import 'package:crypto/crypto.dart';
 import 'package:dart_jsonwebtoken/dart_jsonwebtoken.dart' as djwt;
-import 'package:http/http.dart' as http;
 import 'package:jose/jose.dart' as jose;
 
 import '../../core/provider.dart';
@@ -478,7 +477,7 @@ class AppleProvider extends OAuthProvider {
           final jws = jose.JsonWebSignature.fromCompactSerialization(
             rawIdToken,
           );
-          var vPayload = jws.getPayload(keyStore);
+          await jws.getPayload(keyStore); // checks if jwt is verified
         } catch (e) {
           throw const IdTokenValidationException(
             'Apple id_token signature verification failed. '
