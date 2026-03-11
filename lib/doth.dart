@@ -15,7 +15,7 @@ library;
 export 'src/core/exceptions.dart';
 export 'src/core/pkce.dart'
     show generateState, generateNonce, timingSafeEqual, PkceChallenge;
-export 'src/core/provider.dart' hide postTokenEndpoint, getWithBearerToken;
+export 'src/core/provider.dart';
 export 'src/core/registry.dart';
 export 'src/core/session.dart';
 export 'src/core/state_store.dart';

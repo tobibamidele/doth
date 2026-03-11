@@ -81,3 +81,8 @@ final class TokenRefreshException extends OAuthException {
 final class IdTokenValidationException extends OAuthException {
   const IdTokenValidationException(super.message, {super.cause});
 }
+
+/// A client secret exception occured. Eg, failed to sign jwt for apple provider.
+final class OAuthClientSecretException extends OAuthException {
+  const OAuthClientSecretException(super.message, {super.cause});
+}
