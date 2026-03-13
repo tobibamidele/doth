@@ -1,0 +1,31 @@
+name: Publish to pub.dev
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Dart
+        uses: dart-lang/setup-dart@v1
+
+      - name: Install dependencies
+        run: dart pub get
+
+      - name: Verify package
+        run: dart pub publish --dry-run
+
+      - name: Publish package
+        env:
+          PUB_CREDENTIALS: ${{ secrets.PUB_CREDENTIALS }}
+          run: |
+            mkdir -p ~/.config/dart
+            echo "$PUB_CREDENTIALS" > ~/.config/dart/pub-crendentials.json
+
